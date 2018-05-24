@@ -241,3 +241,35 @@ Resources:
         FromPort: '10250'
         ToPort: '10250'
         CidrIp: 0.0.0.0/0
+      - IpProtocol: tcp
+        FromPort: '30001'
+        ToPort: '30001'
+        CidrIp: 0.0.0.0/0
+      - IpProtocol: tcp
+        FromPort: '30002'
+        ToPort: '30002'
+        CidrIp: 0.0.0.0/0
+      - IpProtocol: tcp
+        FromPort: '30003'
+        ToPort: '30003'
+        CidrIp: 0.0.0.0/0
+      - IpProtocol: tcp
+        FromPort: '30004'
+        ToPort: '30004'
+        CidrIp: 0.0.0.0/0
+      - IpProtocol: tcp
+        FromPort: '31001'
+        ToPort: '31001'
+        CidrIp: 0.0.0.0/0
+      - IpProtocol: tcp
+        FromPort: '31002'
+        ToPort: '31002'
+        CidrIp: 0.0.0.0/0
+      - IpProtocol: tcp
+        FromPort: '31003'
+        ToPort: '31003'
+        CidrIp: 0.0.0.0/0
+      - IpProtocol: tcp
+        FromPort: '31004'
+        ToPort: '31004'
+        CidrIp: 0.0.0.0/0

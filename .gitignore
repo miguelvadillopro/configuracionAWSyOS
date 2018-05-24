@@ -1,4 +1,3 @@
 openshift-ansible
 prepare.retry
-prepare.yml
 quickstart-redhat-openshift
