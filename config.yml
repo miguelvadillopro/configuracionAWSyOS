@@ -1,0 +1,8 @@
+---
+- hosts: nodes
+  gather_facts: no
+
+  tasks:
+
+    - name: remove docker certificates for openshift
+      raw: sudo rm -rf /etc/docker/certs.d/*
