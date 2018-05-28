@@ -17,13 +17,13 @@ openshift_master_identity_providers=[{'name': 'htpasswd_auth', 'login': 'true', 
 openshift_disable_check=disk_availability,docker_storage,memory_availability
 
 [masters]
-34.200.237.215
+34.234.207.198
 
 [etcd]
-34.200.237.215
+34.234.207.198
 
 [nodes]
-34.200.237.215 openshift_node_labels="{'region':'infra','zone':'east'}" openshift_schedulable=true
-35.172.209.192 openshift_node_labels="{'region': 'primary', 'zone': 'east'}"
-52.91.86.89 openshift_node_labels="{'region': 'primary', 'zone': 'east'}"
-18.233.200.182 openshift_node_labels="{'region': 'primary', 'zone': 'east'}"
+34.234.207.198 openshift_node_labels="{'region':'infra','zone':'east'}" openshift_schedulable=true
+34.237.176.110 openshift_node_labels="{'region': 'primary', 'zone': 'east'}"
+52.201.50.41 openshift_node_labels="{'region': 'primary', 'zone': 'east'}"
+18.205.2.38 openshift_node_labels="{'region': 'primary', 'zone': 'east'}"
