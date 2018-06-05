@@ -273,3 +273,53 @@ Resources:
         FromPort: '31004'
         ToPort: '31004'
         CidrIp: 0.0.0.0/0
+      - IpProtocol: tcp
+        FromPort: '80'
+        ToPort: '80'
+        CidrIp: 0.0.0.0/0
+      - IpProtocol: tcp
+        FromPort: '443'
+        ToPort: '443'
+        CidrIp: 0.0.0.0/0
+      - IpProtocol: tcp
+        FromPort: '30500'
+        ToPort: '30500'
+        CidrIp: 0.0.0.0/0
+      - IpProtocol: tcp
+        FromPort: '31111'
+        ToPort: '31111'
+        CidrIp: 0.0.0.0/0
+      - IpProtocol: tcp
+        FromPort: '32222'
+        ToPort: '32222'
+        CidrIp: 0.0.0.0/0
+
+  elb_classic_lb:
+    name: "openshift-lab-mvp"
+    state: present
+    instance_ids: !Ref openshiftmaster
+    subnets:
+      - !Ref subnet1
+      - !Ref subnet2
+    zones:
+      - !Ref AvailabilityZone1
+      - !Ref AvailabilityZone2
+    listeners:
+      - protocol: tcp # options are http, https, ssl, tcp
+        load_balancer_port: 80
+        instance_port: 31111
+        # proxy_protocol: True
+      - protocol: tcp
+        load_balancer_port: 443
+        instance_port: 32222
+    health_check:
+        ping_protocol: https # options are http, https, ssl, tcp
+        ping_port: 30500
+        ping_path: "/healthz" # not required for tcp or ssl
+        response_timeout: 5 # seconds
+        interval: 30 # seconds
+        unhealthy_threshold: 2
+        healthy_threshold: 10
+  delegate_to: localhost
+
+
